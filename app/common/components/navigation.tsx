@@ -164,9 +164,7 @@ export default function Navigation({
                 {menu.items ? (
                   <>
                     <Link to={menu.to}>
-                      <NavigationMenuTrigger>
-                        <Link to={menu.to}>{menu.name}</Link>
-                      </NavigationMenuTrigger>
+                      <NavigationMenuTrigger>{menu.name}</NavigationMenuTrigger>
                     </Link>
                     <NavigationMenuContent>
                       <ul className="grid w-[600px] font-light gap-3 p-4 grid-cols-2">
@@ -180,7 +178,7 @@ export default function Navigation({
                                 "col-span-2 bg-primary/10 [&_a]:hover:bg-primary/20 focus:bg-primary/20",
                             ])}
                           >
-                            <NavigationMenuLink asChild>
+                            <NavigationMenuLink>
                               <Link
                                 className="p-3 space-y-1 block leading-none no-underline outline-none"
                                 to={item.to}
@@ -209,12 +207,12 @@ export default function Navigation({
         </NavigationMenu>
       </div>
       {isLoggedIn ? (
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <Button size="icon" variant="ghost" asChild className="relative">
             <Link to="/my/notifications">
               <BellIcon className="size-4" />
               {hasNotifications && (
-                <span className="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full" />
+                <div className="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full" />
               )}
             </Link>
           </Button>
@@ -222,14 +220,14 @@ export default function Navigation({
             <Link to="/my/messages">
               <MessageCircleIcon className="size-4" />
               {hasMessages && (
-                <span className="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full" />
+                <div className="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full" />
               )}
             </Link>
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarImage src="https://github.com/bellukki.png" />
                 <AvatarFallback>N</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
