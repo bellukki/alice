@@ -47,7 +47,7 @@ export const loader = ({ params }: Route.LoaderArgs) => {
   return { ...parsedData };
 };
 
-export default function DailyLeaderboardsPage({
+export default function DailyLeaderboardPage({
   loaderData,
 }: {
   loaderData: Awaited<ReturnType<typeof loader>>;
