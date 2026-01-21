@@ -1,5 +1,7 @@
 import { Button } from "~/common/components/ui/button";
 import { ReviewCard } from "../components/review-card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "~/common/components/ui/dialog";
+import CreateReviewDialog from "../components/create-review-dialog";
 
 export function meta() {
   return [
@@ -10,10 +12,13 @@ export function meta() {
 
 export default function ProductReviewsPage() {
   return (
-    <div className="space-y-10 max-w-xl">
+<Dialog>
+<div className="space-y-10 max-w-xl">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">10 Reviews</h2>
+        <DialogTrigger>
         <Button variant="secondary">Write a Review</Button>
+        </DialogTrigger>
       </div>
       <div className="space-y-20">
         {Array.from({ length: 10 }).map((_, index) => (
@@ -29,5 +34,7 @@ export default function ProductReviewsPage() {
         ))}
       </div>
     </div>
+    <CreateReviewDialog />
+</Dialog>
   );
 }

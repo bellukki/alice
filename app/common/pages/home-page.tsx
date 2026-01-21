@@ -36,7 +36,7 @@ export default function HomePage() {
             description="Product Description"
             commentsCount={12}
             viewsCount={12}
-            upvotesCount={120}
+            votesCount={120}
           />
         ))}
       </div>
@@ -54,7 +54,8 @@ export default function HomePage() {
         </div>
         {Array.from({ length: 11 }).map((_, index) => (
           <PostCard
-            postId={`post-${index}`}
+            key={`postId-${index}`}
+            id={`postId-${index}`}
             title="What is the best productivity tool?"
             author="Nico"
             authorAvatarUrl="https://github.com/apple.png"
