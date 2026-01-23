@@ -127,7 +127,8 @@ export default function HomePage() {
         </div>
         {Array.from({ length: 7 }).map((_, index) => (
           <TeamCard
-            id="teamId"
+            key={`teamId-${index}`}
+            id={`teamId-${index}`}
             leaderUsername="bellukki"
             leaderAvatarImage="https://github.com/bellukki.png"
             positions={[
